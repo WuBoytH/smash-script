@@ -1,3 +1,4 @@
+#![allow(non_camel_case_types)]
 #![feature(proc_macro_hygiene)]
 #![feature(asm)]
 #[macro_use]

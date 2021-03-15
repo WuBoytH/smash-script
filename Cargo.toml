@@ -6,6 +6,6 @@ edition = "2018"
 
 [dependencies]
 skyline = { git = "https://github.com/ultimate-research/skyline-rs" }
-skyline_smash = { git = "https://github.com/blu-dev/skyline-smash" }
+skyline_smash = { path = "../skyline-smash" }
 lua_macro = { path = "./lua-macro" }
 num-traits = "0.2.14"

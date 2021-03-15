@@ -1,4 +1,6 @@
 #![allow(non_snake_case)]
+#![allow(unused_parens)]
+#![allow(non_camel_case_types)]
 use smash::lib::L2CValue;
 use smash::lua2cpp::L2CAgentBase;
 use smash::phx::Hash40;

@@ -1,6 +1,8 @@
 #![feature(asm)]
 #![feature(const_loop)]
 #![feature(const_if_match)]
+#![allow(unused_mut)]
+#![allow(dead_code)]
 use syn::{self, punctuated};
 use syn::parse::{Parse, ParseStream};
 use syn::{parenthesized, bracketed, token, Token};
