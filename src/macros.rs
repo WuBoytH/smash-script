@@ -255,6 +255,13 @@ pub unsafe fn FT_SET_FINAL_FEAR_FACE(fighter: &mut L2CAgentBase, unk: u64) {
 }
 
 #[inline]
+pub unsafe fn CAM_ZOOM_OUT(fighter: &mut L2CAgentBase) {
+    fighter.clear_lua_stack();
+    sv_animcmd::CAM_ZOOM_OUT(fighter.lua_state_agent);
+    fighter.clear_lua_stack();
+}
+
+#[inline]
 pub unsafe fn CAM_ZOOM_OUT_FINAL(fighter: &mut L2CAgentBase) {
     fighter.clear_lua_stack();
     sv_animcmd::CAM_ZOOM_OUT_FINAL(fighter.lua_state_agent);
