@@ -835,6 +835,16 @@ pub unsafe fn EFFECT_FOLLOW_NO_STOP<
 }
 
 #[inline]
+pub unsafe fn EFFECT_FOLLOW_arg11<
+    A: ToF32, B: ToF32, C: ToF32, D: ToF32, E: ToF32, F: ToF32 , G: ToF32
+    >(fighter: &mut L2CAgentBase, effect: Hash40, bone: Hash40, unk: A, unk2: B, unk3: C, unk4: D, unk5: E, unk6: F, unk7: G, unk8: bool, unk9: i32) {
+    fighter.clear_lua_stack();
+    lua_args!(fighter, effect, bone, unk.to_f32(), unk2.to_f32(), unk3.to_f32(), unk4.to_f32(), unk5.to_f32(), unk6.to_f32(), unk7.to_f32(), unk8, unk9);
+    sv_animcmd::EFFECT_FOLLOW_arg11(fighter.lua_state_agent);
+    fighter.clear_lua_stack();
+}
+
+#[inline]
 pub unsafe fn EFFECT_FOLLOW_NO_STOP_FLIP<
     A: ToF32, B: ToF32, C: ToF32, D: ToF32, E: ToF32, F: ToF32, G: ToF32
     >(fighter: &mut L2CAgentBase, effect: Hash40, bone: Hash40, unk: Hash40, unk2: A, unk3: B, unk4: C, unk5: D, unk6: E, unk7: F, unk8: G, unk9: bool, axis: i32) {
@@ -857,6 +867,13 @@ pub unsafe fn COL_PRI(fighter: &mut L2CAgentBase, pri: u64) {
     fighter.clear_lua_stack();
     lua_args!(fighter, pri);
     sv_animcmd::COL_PRI(fighter.lua_state_agent);
+    fighter.clear_lua_stack();
+}
+
+#[inline]
+pub unsafe fn wait_loop_sync_mot(fighter: &mut L2CAgentBase) {
+    fighter.clear_lua_stack();
+    sv_animcmd::wait_loop_sync_mot(fighter.lua_state_agent);
     fighter.clear_lua_stack();
 }
 
